@@ -1,0 +1,30 @@
+# Git files
+.git
+.gitignore
+
+# Environment files
+.env
+.env.local
+
+# Documentation
+README.md
+CONTRIBUTING.md
+LICENSE
+
+# Tests
+tests/
+
+# Docker files
+docker-compose.yml
+.dockerignore
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# PostgreSQL data
+data/
+pgdata/
+
+# Logs
+*.log
