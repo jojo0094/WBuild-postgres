@@ -2,6 +2,13 @@
 
 PostgreSQL database template with PostGIS and pgRouting extensions, optimized for Railway deployment.
 
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/postgres)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue)
+![PostGIS](https://img.shields.io/badge/PostGIS-3.3-green)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
+> **Quick Start**: New to this project? Check out the [Quick Start Guide](QUICKSTART.md) to get running in minutes!
+
 ## Features
 
 - PostgreSQL 15
