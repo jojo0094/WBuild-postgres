@@ -6,10 +6,54 @@ This guide provides detailed instructions for deploying WBuild-postgres on Railw
 
 - A Railway account ([Sign up here](https://railway.app/))
 - This repository forked or available on GitHub
+- (For automated deployments) A Railway API token ([Get one here](https://railway.app/account/tokens))
 
 ## Quick Deploy
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/postgres)
+
+## Automated Deployment with GitHub Actions
+
+This repository includes a GitHub Actions workflow that automatically deploys to Railway whenever you push to the `main` or `master` branch.
+
+### Setting Up Automated Deployments
+
+1. **Get your Railway API Token**
+   - Go to [Railway Account Tokens](https://railway.app/account/tokens)
+   - Click "Create Token"
+   - Give it a descriptive name (e.g., "GitHub Actions WBuild-postgres")
+   - Copy the token (you won't be able to see it again!)
+
+2. **Add the token to GitHub Secrets**
+   - Go to your GitHub repository
+   - Navigate to Settings > Secrets and variables > Actions
+   - Click "New repository secret"
+   - Name: `RAILWAY_TOKEN`
+   - Value: Paste your Railway API token
+   - Click "Add secret"
+
+3. **Optional: Add Railway Service ID**
+   - If you have multiple services, you may need to specify which one to deploy
+   - In Railway, go to your service settings
+   - Copy the Service ID from the URL or use `railway service` command
+   - Add another GitHub secret:
+     - Name: `RAILWAY_SERVICE_ID`
+     - Value: Your service ID
+
+4. **Deploy**
+   - Push to `main` or `master` branch, or
+   - Manually trigger the workflow from the Actions tab
+
+### Security Best Practices
+
+- **Never commit your Railway token** to the repository
+- Store the token only in GitHub Secrets
+- Rotate your tokens regularly
+- Use separate tokens for different environments (dev, staging, prod)
+- Limit token permissions to only what's needed
+- Review the workflow logs to ensure no secrets are leaked
+
+For comprehensive security guidelines, see [SECURITY.md](SECURITY.md).
 
 ## Step-by-Step Deployment
 

@@ -24,7 +24,18 @@ PostgreSQL database template with PostGIS and pgRouting extensions, optimized fo
 
 ## Deployment to Railway
 
-### Option 1: Deploy from GitHub
+### Option 1: Automated Deployment (Recommended)
+
+This repository includes a GitHub Actions workflow for automatic deployment to Railway.
+
+**Quick Setup:**
+1. Get your Railway API token from [Railway Account](https://railway.app/account/tokens)
+2. Add it as a GitHub secret named `RAILWAY_TOKEN`
+3. Push to `main` or `master` branch
+
+See the [Railway Deployment Guide](RAILWAY_DEPLOYMENT.md) for detailed instructions.
+
+### Option 2: Deploy from GitHub
 
 1. Fork this repository
 2. Go to [Railway.app](https://railway.app/)
@@ -33,7 +44,7 @@ PostgreSQL database template with PostGIS and pgRouting extensions, optimized fo
 5. Choose your forked repository
 6. Railway will automatically detect the Dockerfile and deploy
 
-### Option 2: Using Railway CLI
+### Option 3: Using Railway CLI
 
 ```bash
 # Install Railway CLI
@@ -115,6 +126,24 @@ The following environment variables can be configured:
 - `POSTGRES_PASSWORD` - Database password (required)
 - `POSTGRES_USER` - Database user (default: postgres)
 - `POSTGRES_DB` - Database name (default: postgres)
+
+### For CI/CD Deployments
+
+- `RAILWAY_TOKEN` - Railway API token (for GitHub Actions deployment)
+- `RAILWAY_SERVICE_ID` - Optional: Railway service ID if you have multiple services
+
+**Security Note:** Never commit sensitive credentials to your repository. Use environment variables and GitHub Secrets for CI/CD workflows. See [.env.example](.env.example) for configuration templates and [SECURITY.md](SECURITY.md) for comprehensive security guidelines.
+
+## Security
+
+This project follows security best practices for handling credentials and tokens:
+
+- Railway API tokens are stored as GitHub Secrets
+- Database passwords are configured via environment variables
+- No sensitive data is committed to the repository
+- Regular security updates and monitoring
+
+For detailed security guidelines, see [SECURITY.md](SECURITY.md).
 
 ## Usage Example
 
