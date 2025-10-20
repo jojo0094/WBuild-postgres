@@ -1,0 +1,14 @@
+# Environment variables
+.env
+.env.local
+
+# PostgreSQL data directory
+data/
+pgdata/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
